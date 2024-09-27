@@ -1,11 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import {Player} from '../components/Player'
+import {Player} from '../components/Player';
+
+const url = `${Astro.url.origin}${Astro.url.pathname}/manifests/manifest.json`
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<Player manifestURL='https://avannotate.github.io/rebecca/manifests/manifest.json' client:only="react"/>
+		<Player manifestURL={url} client:only="react"/>
 	</main>
 </Layout>
 
